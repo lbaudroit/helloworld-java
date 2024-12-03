@@ -21,3 +21,5 @@ jobs:
           distribution: adopt
       - name: build with mvn clean (no tests)
         run: mvn clean package -DskipTests
+      - name: rename JAR file
+        run: mv target/*.jar target/helloworld-${{ env.PROJECT_VERSION }}.jar
