@@ -27,7 +27,7 @@ jobs:
       - name: build with mvn clean (no tests)
         run: mvn clean package -DskipTests 
         env:
-          MAVEN_OPTS: "$-Dmaven.repo.local=${{ github.workspace }}/.m2/repository"
+          MAVEN_OPTS: "-Dmaven.repo.local=${{ github.workspace }}/.m2/repository"
       - name: rename JAR file
         run: mv target/*.jar target/helloworld-${{ env.PROJECT_VERSION }}.jar
   test:
