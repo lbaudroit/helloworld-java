@@ -48,4 +48,13 @@ jobs:
           distribution: adopt
       - name: build with mvn clean (no tests)
         run: mvn test
-          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v4.1.8
+      with:
+        name: helloworld-${{ env.PROJECT_VERSION }}.jar
+        path: dist/helloworld-${{ env.PROJECT_VERSION }}.jar
+        run: echo 'Deployed !'
