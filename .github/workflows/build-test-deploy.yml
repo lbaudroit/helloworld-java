@@ -42,5 +42,3 @@ jobs:
           distribution: adopt
       - name: build with mvn clean (no tests)
         run: mvn test
-        env:
-          MAVEN_OPTS: "$-Dmaven.repo.local=${{ github.workspace }}/.m2/repository"
