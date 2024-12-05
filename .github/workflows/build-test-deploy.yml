@@ -57,4 +57,5 @@ jobs:
       with:
         name: helloworld-${{ env.PROJECT_VERSION }}.jar
         path: dist/helloworld-${{ env.PROJECT_VERSION }}.jar
-        run: echo 'Deployed !'
+    - name: Deploy
+      run: echo 'Deployed !'
